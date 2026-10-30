@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KS Innovation | 24/7 AI Phone Calling & WhatsApp Automation Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #040813;
+    --navy-card: #0a1329;
+    --border-card: rgba(255, 255, 255, 0.08);
+    --gold: #f0b90b;
+    --cyan: #00f0ff;
+    --emerald: #00ff88;
+    --text-white: #f8fafc;
+    --text-muted: #94a3b8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Navigation Bar */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(4, 8, 19, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-card);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .nav-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(240, 185, 11, 0.4);
+  }
+  .brand-text h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+  .brand-text p {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--cyan); }
+  .btn-nav-cta {
+    background: linear-gradient(135deg, var(--cyan), #0077ff);
+    color: #040813;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3);
+    transition: transform 0.2s;
+  }
+  .btn-nav-cta:hover { transform: translateY(-2px); }
+
+  /* Hero Section */
+  .hero {
+    padding: 100px 40px 80px;
+    text-align: center;
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 24px;
+  }
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--emerald);
+    box-shadow: 0 0 10px var(--emerald);
+  }
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--cyan) 10%, #38bdf8 50%, var(--emerald) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-desc {
+    font-size: 19px;
+    color: var(--text-muted);
+    max-width: 760px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--cyan), #0077ff);
+    color: #040813;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 30px rgba(0, 240, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-3px); }
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-card);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+  /* Hub Trust Strip */
+  .trust-strip {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-card);
+    border-bottom: 1px solid var(--border-card);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Verticals Section */
+  .section-container {
+    max-width: 1140px;
+    margin: 80px auto;
+    padding: 0 40px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-sub {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--cyan);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .v-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    padding: 28px 24px;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .v-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 240, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.15);
+  }
+  .v-icon {
+    font-size: 38px;
+    margin-bottom: 16px;
+  }
+  .v-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .v-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .v-tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--emerald);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+  }
+
+  /* Live Interactive Demo Preview */
+  .demo-strip-card {
+    background: linear-gradient(135deg, rgba(10, 19, 41, 0.9), rgba(6, 11, 24, 0.9));
+    border: 1.5px solid rgba(0, 240, 255, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  }
+  .demo-left h3 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+  .demo-left p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .feature-point {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+
+  /* Contact & Location Footer */
+  footer {
+    background: #02050b;
+    border-top: 1px solid var(--border-card);
+    padding: 60px 40px 30px;
+    margin-top: 100px;
+  }
+  .footer-grid {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-col h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer-col p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .footer-phone {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--cyan);
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+  }
+  .footer-phone:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav>
+    <a href="ks_website.html" class="nav-brand">
+      <img src="ks_logo.jpg" alt="KS Innovation" class="nav-logo">
+      <div class="brand-text">
+        <h2>KS INNOVATION</h2>
+        <p>Securing Digital India</p>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="voice_caller_suite.html" class="nav-link">📞 Voice Calling</a>
+      <a href="agency_suite.html" class="nav-link">📱 WhatsApp Demos</a>
+      <a href="ks_innovation_video.html" class="nav-link">🎥 Video Ad</a>
+      <a href="ks_innovation_poster.html" class="nav-link">🖼️ Poster</a>
+      <a href="https://wa.me/918005587002?text=Hello%20KS%20Innovation,%20I%20want%20a%20free%20AI%20Demo!" target="_blank" class="btn-nav-cta">
+        Book Free Demo
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span> Incubated at Bhamashah Techno Hub, Jaipur
+    </div>
+
+    <h1 class="hero-title">
+      Never Miss a Customer Call Again.<br>
+      <span class="gradient-text">24/7 AI Receptionists & WhatsApp Bots</span>
+    </h1>
+
+    <p class="hero-desc">
+      Empower your business with human-like AI agents that answer phone calls within 2 seconds, speak fluent Hindi and Hinglish, and close sales on WhatsApp automatically.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="tel:+918005587002" class="btn-primary">
+        📞 Call Now: +91 8005587002
+      </a>
+      <a href="voice_caller_suite.html" class="btn-secondary">
+        🎧 Test Live Voice Calling
+      </a>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-strip">
+    <div class="trust-item">📍 Bhamashah Techno Hub, Malviya Nagar, Jaipur</div>
+    <div class="trust-item">⚡ 0% Missed Customer Calls</div>
+    <div class="trust-item">💰 Save ₹1,50,000+ Yearly in Receptionist Salary</div>
+    <div class="trust-item">🛡️ DPDP Act 2023 Compliant</div>
+  </div>
+
+  <!-- Target Business Verticals -->
+  <section class="section-container">
+    <div class="section-header">
+      <div class="section-sub">High-Ticket Automations</div>
+      <h2 class="section-title">Built for Indian Businesses</h2>
+    </div>
+
+    <div class="grid-4">
+      <!-- 1. Gyms -->
+      <div class="v-card">
+        <div>
+          <div class="v-icon">🏋️</div>
+          <div class="v-title">Fitness Gyms & Clubs</div>
+          <div class="v-desc">
+            Answers fee queries, books 1-Day free trial passes, manages batch timings, and collects advance UPI membership payments.
+          </div>
+        </div>
+        <div class="v-tag">✓ 35% Higher Trial Footfalls</div>
+      </div>
+
+      <!-- 2. Hotels -->
+      <div class="v-card">
+        <div>
+          <div class="v-icon">🏨</div>
+          <div class="v-title">Hotels & Resorts</div>
+          <div class="v-desc">
+            Shares HD room catalogs, check-in policies, room tariffs, and answers late-night reservation calls without manual staff.
+          </div>
+        </div>
+        <div class="v-tag">✓ Zero OTA Commission Loss</div>
+      </div>
+
+      <!-- 3. Bus Travel -->
+      <div class="v-card">
+        <div>
+          <div class="v-icon">🚌</div>
+          <div class="v-title">Bus & Travel Services</div>
+          <div class="v-desc">
+            Shares departure schedules, ticket fares, pickup point Google Maps pins, and live GPS bus tracking links automatically.
+          </div>
+        </div>
+        <div class="v-tag">✓ 2-Second Ticket Inquiry</div>
+      </div>
+
+      <!-- 4. B2B Sales -->
+      <div class="v-card">
+        <div>
+          <div class="v-icon">💼</div>
+          <div class="v-title">B2B Manufacturing</div>
+          <div class="v-desc">
+            Qualifies corporate buyer inquiries, checks MOQ and specs, and schedules 15-minute Zoom meetings with the Managing Director.
+          </div>
+        </div>
+        <div class="v-tag">✓ 100% Verified Buyer Leads</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Showcase Card -->
+  <section class="section-container">
+    <div class="demo-strip-card">
+      <div class="demo-left">
+        <div style="font-size: 12px; color: var(--gold); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px;">
+          PROVEN RETENTION ENGINE
+        </div>
+        <h3>Test The AI Yourself in 1 Click</h3>
+        <p>
+          You don't need to imagine how it works. Click our floating AI widget at the bottom right corner of this screen to chat or initiate a real phone call right now!
+        </p>
+        <div class="feature-point">✓ Answers phone calls in natural Hindi and Hinglish</div>
+        <div class="feature-point">✓ Dispatches automated WhatsApp confirmation passes</div>
+        <div class="feature-point">✓ Escalates angry customers to the business owner</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="ks_logo.jpg" alt="KS Innovation" style="width: 170px; height: 170px; border-radius: 50%; border: 3px solid var(--gold); box-shadow: 0 0 40px rgba(240, 185, 11, 0.4);">
+        <div style="margin-top: 14px; font-weight: 800; font-size: 16px; color: #fff;">Priya (AI Voice Receptionist)</div>
+        <div style="font-size: 12px; color: var(--emerald);">Online & Ready to Take Inquiries</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Contact -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>KS INNOVATION</h4>
+        <p>
+          Deep-Tech AI Automation Agency specializing in 24/7 conversational AI, Meta WhatsApp Cloud API integrations, and low-latency voice telephony for Indian enterprises.
+        </p>
+        <p style="margin-top: 10px; color: var(--gold); font-weight: 700;">
+          Securing Digital India.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>OFFICE LOCATION</h4>
+        <p>
+          📍 Bhamashah Techno Hub,<br>
+          2nd Floor, Malviya Nagar,<br>
+          Jaipur, Rajasthan - 302017
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>DIRECT CONTACT</h4>
+        <p>Speak with Founder Rahul:</p>
+        <a href="tel:+918005587002" class="footer-phone">+91 8005587002</a>
+        <p>Available on Call & WhatsApp 24/7</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; border-top: 1px solid var(--border-card); padding-top: 20px; font-size: 12px; color: var(--text-muted);">
+      © 2026 KS Innovation. All Rights Reserved. Built at Bhamashah Techno Hub, Jaipur.
+    </div>
+  </footer>
+
+  <!-- EMBED KS INNOVATION AI WIDGET (LIVE ON THIS SITE!) -->
+  <script src="ks-ai-widget.js"></script>
+
+</body>
+</html>

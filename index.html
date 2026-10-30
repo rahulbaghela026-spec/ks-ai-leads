@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KS Innovation | 24/7 AI Voice Calling & WhatsApp Automation Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #040814;
+    --navy-card: #091226;
+    --navy-card-hover: #0f1f42;
+    --border-card: rgba(255, 255, 255, 0.08);
+    --gold: #f0b90b;
+    --gold-glow: rgba(240, 185, 11, 0.35);
+    --cyan: #00f0ff;
+    --cyan-glow: rgba(0, 240, 255, 0.35);
+    --emerald: #00ff88;
+    --text-white: #f8fafc;
+    --text-muted: #94a3b8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* TOP NOTIFICATION TICKER */
+  .top-ticker {
+    background: linear-gradient(90deg, #091533, #132759, #091533);
+    border-bottom: 1px solid rgba(240, 185, 11, 0.3);
+    padding: 8px 20px;
+    font-size: 12px;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+  .ticker-badge {
+    background: var(--gold);
+    color: #040814;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* STICKY MAIN NAVIGATION */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(4, 8, 20, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-card);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .brand-logo-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    object-fit: cover;
+    box-shadow: 0 0 20px var(--gold-glow);
+  }
+  .brand-title-box h2 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+  }
+  .brand-title-box p {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .nav-item:hover { color: var(--cyan); }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .btn-nav-call {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-card);
+  }
+  .btn-nav-cta {
+    background: linear-gradient(135deg, var(--cyan), #0077ff);
+    color: #040814;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px var(--cyan-glow);
+    transition: transform 0.2s;
+  }
+  .btn-nav-cta:hover { transform: translateY(-2px); }
+
+  /* HERO SECTION */
+  .hero-wrapper {
+    position: relative;
+    padding: 90px 30px 80px;
+    max-width: 1180px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-glow-blob {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, rgba(240, 185, 11, 0.08) 50%, transparent 80%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1.5px solid rgba(0, 240, 255, 0.35);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--cyan);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .pulse-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--emerald);
+    box-shadow: 0 0 10px var(--emerald);
+  }
+  .hero-main-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .gradient-hero-text {
+    background: linear-gradient(135deg, var(--cyan) 10%, #38bdf8 50%, var(--emerald) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-subtitle {
+    font-size: 19px;
+    color: var(--text-muted);
+    max-width: 780px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 54px;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-hero-primary {
+    background: linear-gradient(135deg, var(--cyan), #0077ff);
+    color: #040814;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 16px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-text-shadow: 0 6px 30px var(--cyan-glow);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+  }
+  .btn-hero-primary:hover { transform: translateY(-3px); }
+  .btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-card);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+  /* TRUST BADGES STRIP */
+  .trust-strip {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-card);
+    border-bottom: 1px solid var(--border-card);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .trust-item b { color: #fff; }
+
+  /* SECTION WRAPPER */
+  .section-block {
+    max-width: 1180px;
+    margin: 90px auto;
+    padding: 0 30px;
+  }
+  .section-heading-box {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-tag {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--cyan);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  /* 4 SUPER-POWERS GRID */
+  .powers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .power-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    padding: 28px 24px;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .power-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 240, 255, 0.4);
+    background: var(--navy-card-hover);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--cyan-glow);
+  }
+  .power-icon {
+    font-size: 38px;
+    margin-bottom: 16px;
+  }
+  .power-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .power-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .power-pill {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--emerald);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+  }
+
+  /* INTERACTIVE LIVE PLAYGROUND SIMULATOR */
+  .simulator-wrapper {
+    background: linear-gradient(135deg, rgba(9, 18, 38, 0.95), rgba(5, 10, 24, 0.95));
+    border: 1.5px solid rgba(0, 240, 255, 0.3);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.9), 0 0 40px var(--cyan-glow);
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 40px;
+    align-items: center;
+  }
+  .sim-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .sim-info p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .sim-niche-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .n-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-card);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .n-chip.active {
+    background: var(--cyan);
+    color: #040814;
+    font-weight: 800;
+    box-shadow: 0 0 15px var(--cyan-glow);
+  }
+
+  /* Embedded Phone Frame */
+  .phone-mock {
+    background: #0b141a;
+    border: 6px solid #1e293b;
+    border-radius: 36px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+  }
+  .phone-top-bar {
+    background: #1f2c34;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .phone-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #00a884;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+  }
+  .phone-chat-scroll {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-image: radial-gradient(#1f2c34 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+  .bubble-u {
+    align-self: flex-end;
+    background: #005c4b;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px 0px 8px 8px;
+    font-size: 12.5px;
+    max-width: 82%;
+  }
+  .bubble-b {
+    align-self: flex-start;
+    background: #202c33;
+    color: #e9edef;
+    padding: 8px 12px;
+    border-radius: 0px 8px 8px 8px;
+    font-size: 12.5px;
+    max-width: 85%;
+    border-left: 3px solid #00a884;
+  }
+  .phone-input-bar {
+    background: #1f2c34;
+    padding: 10px 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .phone-input-bar input {
+    flex: 1;
+    background: #2a3942;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 14px;
+    color: #fff;
+    font-size: 12.5px;
+    outline: none;
+  }
+  .phone-send-btn {
+    background: #00a884;
+    color: #fff;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* ROI & REVENUE CALCULATOR */
+  .calc-box {
+    background: var(--navy-card);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .calc-slider-wrap {
+    margin-bottom: 24px;
+  }
+  .calc-slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  input[type=range] {
+    width: 100%;
+    accent-color: var(--cyan);
+  }
+  .roi-stat-card {
+    background: rgba(0, 240, 255, 0.05);
+    border: 1.5px solid var(--cyan);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+  }
+  .roi-money {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--cyan);
+    margin: 8px 0;
+  }
+
+  /* PRICING PACKAGES */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pricing-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.2s;
+  }
+  .pricing-card:hover { transform: translateY(-6px); }
+  .pricing-card.popular {
+    border-color: var(--gold);
+    box-shadow: 0 0 35px var(--gold-glow);
+    background: linear-gradient(180deg, #101c3d 0%, #091226 100%);
+  }
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #040814;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .plan-name { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .plan-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #fff;
+    margin: 16px 0 6px;
+  }
+  .plan-retainer { font-size: 13px; color: var(--emerald); font-weight: 700; margin-bottom: 24px; }
+  .plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+  }
+  .plan-features li { display: flex; align-items: center; gap: 8px; }
+  .btn-plan-select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  .btn-plan-normal { background: rgba(255, 255, 255, 0.08); color: #fff; }
+  .btn-plan-popular { background: linear-gradient(135deg, var(--gold), #d97706); color: #040814; }
+
+  /* LEAD INQUIRY FORM CONTAINER */
+  .inquiry-master-card {
+    background: linear-gradient(180deg, #0a1329 0%, #050a17 100%);
+    border: 2px solid rgba(0, 240, 255, 0.35);
+    border-radius: 28px;
+    padding: 50px 40px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9), 0 0 40px var(--cyan-glow);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+  }
+  .inquiry-left h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .inquiry-left p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .hub-location-box {
+    background: rgba(240, 185, 11, 0.1);
+    border: 1px solid var(--gold);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .hub-location-box h4 { font-size: 14px; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
+  .hub-location-box p { font-size: 13px; color: #cbd5e1; margin: 0; line-height: 1.5; }
+
+  /* Form Elements */
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { margin-bottom: 16px; }
+  .form-label { display: block; font-size: 12.5px; font-weight: 700; color: #cbd5e1; margin-bottom: 6px; }
+  .form-ctrl {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    color: #fff;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    outline: none;
+    font-family: inherit;
+  }
+  .form-ctrl:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  }
+  .btn-submit-master {
+    width: 100%;
+    background: linear-gradient(135deg, var(--cyan), #0077ff);
+    color: #040814;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 30px var(--cyan-glow);
+    transition: transform 0.2s;
+  }
+  .btn-submit-master:hover { transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: #020409;
+    border-top: 1px solid var(--border-card);
+    padding: 60px 40px 30px;
+    margin-top: 120px;
+  }
+  .footer-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-col h4 { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 14px; letter-spacing: 0.5px; }
+  .footer-col p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+
+  /* RESPONSIVE */
+  @media (max-width: 968px) {
+    .powers-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .simulator-wrapper { grid-template-columns: 1fr; }
+    .calc-box { grid-template-columns: 1fr; }
+    .inquiry-master-card { grid-template-columns: 1fr; }
+    .hero-main-title { font-size: 38px; }
+    nav { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- TOP TICKER -->
+  <div class="top-ticker">
+    <span class="ticker-badge">🔥 LIVE DEMO AVAILABLE</span>
+    <span>Special Launch: Claim <b>1-Day Free Custom AI Bot Trial</b> for your Business • Zero Advance!</span>
+    <a href="#inquiryMaster" style="color: var(--cyan); font-weight: 800; text-decoration: underline;">Claim Now →</a>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav>
+    <a href="index.html" class="brand-logo-wrap">
+      <img src="ks_logo.jpg" alt="KS Innovation" class="brand-logo-img">
+      <div class="brand-title-box">
+        <h2>KS INNOVATION</h2>
+        <p>Securing Digital India</p>
+      </div>
+    </a>
+
+    <div class="nav-menu">
+      <a href="#powers" class="nav-item">Superpowers</a>
+      <a href="#simulator" class="nav-item">Live Bot Demo</a>
+      <a href="#roi" class="nav-item">ROI Calculator</a>
+      <a href="#pricing" class="nav-item">Pricing</a>
+      <a href="#inquiryMaster" class="nav-item">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="tel:+918005587002" class="btn-nav-call">📞 +91 8005587002</a>
+      <a href="#inquiryMaster" class="btn-nav-cta">Book Free Demo</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-wrapper">
+    <div class="hero-glow-blob"></div>
+
+    <div class="hero-badge-pill">
+      <span class="pulse-circle"></span> Bhamashah Techno Hub, Jaipur • 24/7 Voice & WhatsApp AI
+    </div>
+
+    <h1 class="hero-main-title">
+      Never Lose a Customer to <br>
+      <span class="gradient-hero-text">Missed Phone Calls & Delayed Replies</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      India's #1 AI Receptionist that answers phone calls within 2 seconds, speaks fluent Hindi & Hinglish, and closes bookings on WhatsApp automatically without hiring staff.
+    </p>
+
+    <div class="hero-btn-row">
+      <a href="#inquiryMaster" class="btn-hero-primary">
+        🚀 Book Free 1-Day Trial Demo
+      </a>
+      <a href="#simulator" class="btn-hero-secondary">
+        🎧 Test Live Bot Right Now
+      </a>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-item">📍 Incubated at <b>Bhamashah Techno Hub, Jaipur</b></div>
+    <div class="trust-item">⚡ <b>2-Second</b> Response Time Guarantee</div>
+    <div class="trust-item">💰 Save <b>₹1,50,000+ Yearly</b> in Receptionist Salary</div>
+    <div class="trust-item">🛡️ <b>DPDP Act 2023</b> & Meta Cloud API Compliant</div>
+  </div>
+
+  <!-- SECTION 1: 4 CORE SUPERPOWERS -->
+  <section class="section-block" id="powers">
+    <div class="section-heading-box">
+      <div class="section-tag">Complete AI Automation Agency</div>
+      <h2 class="section-h2">Why Businesses Choose KS Innovation</h2>
+    </div>
+
+    <div class="powers-grid">
+      <!-- 1. Voice Calling -->
+      <div class="power-card">
+        <div>
+          <div class="power-icon">📞</div>
+          <div class="power-title">24/7 AI Phone Receptionist</div>
+          <div class="power-desc">
+            Picks calls in 2 seconds. Speaks natural Hindi and Hinglish, handles bargaining, and books clients even at 11 PM.
+          </div>
+        </div>
+        <div class="power-pill">✓ 0% Missed Calls</div>
+      </div>
+
+      <!-- 2. WhatsApp Bot -->
+      <div class="power-card">
+        <div>
+          <div class="power-icon">💬</div>
+          <div class="power-title">Meta WhatsApp Closer</div>
+          <div class="power-desc">
+            Sends instant room catalogs, gym trial passes, ticket schedules, and collects advance UPI booking tokens automatically.
+          </div>
+        </div>
+        <div class="power-pill">✓ 3-Sec Reply Rate</div>
+      </div>
+
+      <!-- 3. Post-Call Auto Pass -->
+      <div class="power-card">
+        <div>
+          <div class="power-icon">⚡</div>
+          <div class="power-title">Instant Post-Call Passes</div>
+          <div class="power-desc">
+            Within 5 seconds of hanging up, the customer receives an automated WhatsApp booking pass with Google Map location pins.
+          </div>
+        </div>
+        <div class="power-pill">✓ 100% Deal Locking</div>
+      </div>
+
+      <!-- 4. Zero Salary Headaches -->
+      <div class="power-card">
+        <div>
+          <div class="power-icon">💰</div>
+          <div class="power-title">Save ₹1.5L+ Salary Annually</div>
+          <div class="power-desc">
+            No receptionist hiring, no sick leaves, no training. 1 single AI system manages hundreds of customers simultaneously.
+          </div>
+        </div>
+        <div class="power-pill">✓ 10X Monthly ROI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LIVE SIMULATOR PLAYGROUND -->
+  <section class="section-block" id="simulator">
+    <div class="simulator-wrapper">
+      <div class="sim-info">
+        <div class="section-tag">Interactive Live Experience</div>
+        <h3>Test The Bot Yourself</h3>
+        <p>
+          Select your industry niche below and test the live WhatsApp bot directly on this screen. This is exactly what your customers will experience!
+        </p>
+
+        <div class="sim-niche-chips">
+          <div class="n-chip active" onclick="switchSimNiche('gym')">🏋️ Gym & Fitness</div>
+          <div class="n-chip" onclick="switchSimNiche('hotel')">🏨 Hotel & Resort</div>
+          <div class="n-chip" onclick="switchSimNiche('bus')">🚌 Bus Travel</div>
+          <div class="n-chip" onclick="switchSimNiche('b2b')">💼 B2B Sales</div>
+        </div>
+
+        <div style="font-size: 13.5px; color: #cbd5e1; line-height: 1.6;">
+          💡 <b>Try Asking:</b> "Fees kitni hai?", "Discount milega kya?", "1-Day trial pass chahiye", or "Photos bhejo!"
+        </div>
+      </div>
+
+      <!-- Live Phone Frame -->
+      <div class="phone-mock">
+        <div class="phone-top-bar">
+          <div class="phone-avatar" id="simAvatar">🏋️</div>
+          <div>
+            <div style="font-size: 13.5px; font-weight: 700; color: #fff;" id="simTitle">IronFit Gym Assistant</div>
+            <div style="font-size: 10.5px; color: #00ff88;">● online • 0-sec AI reply</div>
+          </div>
+        </div>
+
+        <div class="phone-chat-scroll" id="simChatScroll">
+          <div class="bubble-b" id="simInitialGreeting">
+            Namaste! 🙏 IronFit Gym me aapka swagat hai. Aaj 1-Day Free Trial pass book karna hai ya fee plans dekhne hain?
+          </div>
+        </div>
+
+        <div class="phone-input-bar">
+          <input type="text" id="simInput" placeholder="Type message in Hindi/English..." onkeydown="if(event.key==='Enter') sendSimMsg()">
+          <button class="phone-send-btn" onclick="sendSimMsg()">➤</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: REVENUE & SAVINGS CALCULATOR -->
+  <section class="section-block" id="roi">
+    <div class="section-heading-box">
+      <div class="section-tag">Financial Clarity</div>
+      <h2 class="section-h2">Calculate Your Annual Revenue Loss</h2>
+    </div>
+
+    <div class="calc-box">
+      <div>
+        <div class="calc-slider-wrap">
+          <div class="calc-slider-label">
+            <span>Customer Calls Missed Per Day:</span>
+            <span id="callCountLabel" style="color: var(--cyan); font-size: 18px;">5 Calls</span>
+          </div>
+          <input type="range" id="callsSlider" min="1" max="25" value="5" oninput="updateRoiCalc()">
+        </div>
+
+        <div class="calc-slider-wrap">
+          <div class="calc-slider-label">
+            <span>Average Deal / Ticket Value:</span>
+            <span id="dealValLabel" style="color: var(--gold); font-size: 18px;">₹2,000</span>
+          </div>
+          <input type="range" id="dealSlider" min="500" max="10000" step="500" value="2000" oninput="updateRoiCalc()">
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted);">
+          *Assuming conservative 30% of missed callers permanently book with your local competitors instead.
+        </p>
+      </div>
+
+      <div class="roi-stat-card">
+        <div style="font-size: 13px; font-weight: 800; color: #ef4444; letter-spacing: 1px; text-transform: uppercase;">
+          Annual Revenue Lost to Competitors
+        </div>
+        <div class="roi-money" id="roiLossAmount">₹10,95,000</div>
+        <div style="font-size: 14px; color: #cbd5e1;">
+          KS Innovation AI stops 100% of this leakage for less than <b>₹300/day</b>!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: TRANSPARENT PACKAGES -->
+  <section class="section-block" id="pricing">
+    <div class="section-heading-box">
+      <div class="section-tag">Transparent Investment</div>
+      <h2 class="section-h2">Simple, High-ROI Plans</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Plan 1 -->
+      <div class="pricing-card">
+        <div>
+          <div class="plan-name">WhatsApp Sales Bot</div>
+          <div style="font-size: 13px; color: var(--text-muted);">Best for businesses wanting automated chat & trials.</div>
+          <div class="plan-price">₹15,000</div>
+          <div class="plan-retainer">+ ₹3,500/month recurring maintenance</div>
+
+          <ul class="plan-features">
+            <li>✓ Official Meta WhatsApp Cloud API Setup</li>
+            <li>✓ Instant Catalogs, Fees & Trial Booking</li>
+            <li>✓ Bargaining & Negotiation Handling</li>
+            <li>✓ Advance UPI Token Payment Flows</li>
+            <li>✓ Human Escalation to Owner Phone</li>
+          </ul>
+        </div>
+        <a href="#inquiryMaster" class="btn-plan-select btn-plan-normal">Get Started</a>
+      </div>
+
+      <!-- Plan 2 (Popular) -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">MOST POPULAR • 10X ROI</div>
+        <div>
+          <div class="plan-name" style="color: var(--gold);">Complete AI Suite (Voice + WhatsApp)</div>
+          <div style="font-size: 13px; color: var(--text-muted);">Never miss a call or chat. 100% replacement for front desk.</div>
+          <div class="plan-price">₹35,000</div>
+          <div class="plan-retainer">+ ₹10,000/month recurring maintenance</div>
+
+          <ul class="plan-features">
+            <li>✓ <b>Everything in WhatsApp Closer</b></li>
+            <li>✓ <b>24/7 AI Phone Calling (+91 Local Number)</b></li>
+            <li>✓ <b>Sub-2 Second Pickup in Natural Hindi/Hinglish</b></li>
+            <li>✓ <b>Instant Post-Call WhatsApp Pass Dispatch</b></li>
+            <li>✓ <b>VIP Lead Alerts on Owner's WhatsApp</b></li>
+          </ul>
+        </div>
+        <a href="#inquiryMaster" class="btn-plan-select btn-plan-popular">Claim Free Trial Demo</a>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="pricing-card">
+        <div>
+          <div class="plan-name">Enterprise Custom AI</div>
+          <div style="font-size: 13px; color: var(--text-muted);">For multi-branch hotels, bus operators & B2B brands.</div>
+          <div class="plan-price">₹60,000+</div>
+          <div class="plan-retainer">+ Custom Retainer based on volume</div>
+
+          <ul class="plan-features">
+            <li>✓ Multi-Location CRM & Database Sync</li>
+            <li>✓ Custom ERP & Accounting API Hookups</li>
+            <li>✓ Dedicated Account Engineer</li>
+            <li>✓ Unlimited Inbound/Outbound Telephony</li>
+            <li>✓ Custom AI Voice Cloning</li>
+          </ul>
+        </div>
+        <a href="#inquiryMaster" class="btn-plan-select btn-plan-normal">Contact For Enterprise</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: MASTER LEAD INQUIRY FORM -->
+  <section class="section-block" id="inquiryMaster">
+    <div class="inquiry-master-card">
+      <div class="inquiry-left">
+        <div class="section-tag">Direct Founder Access</div>
+        <h3>Claim Your Free 1-Day Trial Demo</h3>
+        <p>
+          Fill out this simple form. Founder Rahul will review your business requirements and send you a working demo preview on WhatsApp within 15 minutes!
+        </p>
+
+        <div class="hub-location-box">
+          <h4>📍 Official Corporate Headquarters</h4>
+          <p>
+            <b>KS Innovation</b><br>
+            Bhamashah Techno Hub, 2nd Floor, Malviya Nagar, Jaipur, Rajasthan - 302017<br>
+            Direct Helpline: <b>+91 8005587002</b>
+          </p>
+        </div>
+      </div>
+
+      <!-- The Form -->
+      <div>
+        <form onsubmit="handleMasterEnquiry(event)">
+          <div class="form-row">
+            <div>
+              <label class="form-label">Your Name *</label>
+              <input type="text" id="mName" class="form-ctrl" placeholder="e.g. Vikram Sharma" required>
+            </div>
+            <div>
+              <label class="form-label">WhatsApp Number *</label>
+              <input type="tel" id="mPhone" class="form-ctrl" placeholder="e.g. 9820144512" pattern="[0-9]{10}" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label class="form-label">Business / Shop Name *</label>
+              <input type="text" id="mBusiness" class="form-ctrl" placeholder="e.g. Iron Fist Gym" required>
+            </div>
+            <div>
+              <label class="form-label">Business Type *</label>
+              <select id="mCategory" class="form-ctrl" required>
+                <option value="" disabled selected>Select Category...</option>
+                <option value="Gym & Fitness Club">🏋️ Gym & Fitness Club</option>
+                <option value="Hotel & Resort">🏨 Hotel & Resort</option>
+                <option value="Bus & Travel Operator">🚌 Bus & Travel Service</option>
+                <option value="B2B Manufacturing & Sales">💼 B2B Manufacturing / Sales</option>
+                <option value="Doctor & Hospital Clinic">🏥 Clinic / Healthcare</option>
+                <option value="Real Estate & Builder">🏢 Real Estate & Builder</option>
+                <option value="Other Local Business">🛍️ Other Commercial Business</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label class="form-label">City / Location *</label>
+              <input type="text" id="mCity" class="form-ctrl" placeholder="e.g. Jaipur, Rajasthan" required>
+            </div>
+            <div>
+              <label class="form-label">Automation Needed *</label>
+              <select id="mReq" class="form-ctrl" required>
+                <option value="Complete Suite (Voice + WhatsApp)">⚡ Complete Suite (Both)</option>
+                <option value="24/7 AI Voice Calling Only">📞 AI Voice Calling Only</option>
+                <option value="WhatsApp Sales Bot Only">💬 WhatsApp Bot Only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Any Special Requirements / Notes</label>
+            <textarea id="mNotes" class="form-ctrl" rows="2" placeholder="e.g. We have 2 branches, need automated fee collection..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-master">
+            🚀 Submit & Send Instant WhatsApp Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>KS INNOVATION</h4>
+        <p>
+          Deep-Tech AI Automation Agency specializing in low-latency conversational telephony, Meta WhatsApp Cloud integrations, and digital enterprise growth.
+        </p>
+        <p style="margin-top: 10px; color: var(--gold); font-weight: 700;">
+          Securing Digital India.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>OFFICE HEADQUARTERS</h4>
+        <p>
+          📍 Bhamashah Techno Hub,<br>
+          2nd Floor, Malviya Nagar,<br>
+          Jaipur, Rajasthan - 302017
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>DIRECT CONNECT</h4>
+        <p>Founder Rahul:</p>
+        <p style="font-family: monospace; font-size: 18px; font-weight: 800; color: var(--cyan); margin: 6px 0;">
+          +91 8005587002
+        </p>
+        <p>Call or WhatsApp anytime 24/7</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; border-top: 1px solid var(--border-card); padding-top: 20px; font-size: 12px; color: var(--text-muted);">
+      © 2026 KS Innovation (ksinnovation.in). All Rights Reserved. Built with pride in Jaipur, Rajasthan.
+    </div>
+  </footer>
+
+  <script>
+    // --- LIVE SIMULATOR NICHE SWITCHER ---
+    const SIM_DATA = {
+      gym: {
+        avatar: "🏋️",
+        title: "IronFit Gym Assistant",
+        greeting: "Namaste! 🙏 IronFit Gym me aapka swagat hai. Aaj 1-Day Free Trial pass book karna hai ya fee plans dekhne hain?",
+        answers: {
+          fee: "Sir 1 Month ₹2,000 hai, par 3 Months combo sirf ₹5,000 me hai with 1 Free Diet Chart!",
+          discount: "Sir single month me rate fixed hai, par shaam ko aao, registration charge zero karwa denge!",
+          trial: "Done sir! Aapka 1-Day VIP Pass reserve ho gaya hai. Aaj shaam 6:00 PM City Center 2nd floor aa jaiye!"
+        }
+      },
+      hotel: {
+        avatar: "🏨",
+        title: "Grand Heritage Resort",
+        greeting: "Namaste! 🙏 Grand Heritage Resort me aapka swagat hai. Room booking ya pool party ke baare me janna hai?",
+        answers: {
+          fee: "Deluxe Pool-facing room ₹3,500/night hai with complimentary buffet breakfast included sir!",
+          discount: "Sir direct WhatsApp booking pe hum free late check-out aur 15% dining discount de rahe hain!",
+          trial: "Main resort ka HD photo catalog aur direct booking link abhi aapko bhej raha hoon!"
+        }
+      },
+      bus: {
+        avatar: "🚌",
+        title: "Royal Travels Booking Desk",
+        greeting: "Haanji Royal Travels! 🚌 Kahan ka ticket book karna hai aapko?",
+        answers: {
+          fee: "Delhi se Jaipur AC Multi-Axle Sleeper seat ka fare sirf ₹850 hai sir.",
+          discount: "Agar aap return ticket saath book karte hain toh flat ₹100 instant off milega!",
+          trial: "Aaj raat 10:30 PM Dhaula Kuan pickup hai. Seat hold karne ke liye WhatsApp pe CONFIRM karein!"
+        }
+      },
+      b2b: {
+        avatar: "💼",
+        title: "KS Tech B2B Solutions",
+        greeting: "Good day! KS Tech Solutions se Kavita baat kar rahi hoon. Kya meri baat Managing Director sir se ho rahi hai?",
+        answers: {
+          fee: "Sir minimum order quantity 500 units hai, custom specs ke hisaab se quotation share kar dungi.",
+          discount: "Bulk volume orders pe direct tier-3 pricing apply hoti hai sir.",
+          trial: "Kal dopahar 3 baje humare Technical Director ke saath ek 15-minute ka Google Meet demo schedule kar doon?"
+        }
+      }
+    };
+
+    let activeSimNiche = 'gym';
+
+    function switchSimNiche(nicheKey) {
+      activeSimNiche = nicheKey;
+      document.querySelectorAll('.n-chip').forEach(c => c.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const data = SIM_DATA[nicheKey];
+      document.getElementById('simAvatar').innerText = data.avatar;
+      document.getElementById('simTitle').innerText = data.title;
+      document.getElementById('simChatScroll').innerHTML = `
+        <div class="bubble-b">${data.greeting}</div>
+      `;
+    }
+
+    function sendSimMsg() {
+      const input = document.getElementById('simInput');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+
+      const scroll = document.getElementById('simChatScroll');
+      const userBubble = document.createElement('div');
+      userBubble.className = 'bubble-u';
+      userBubble.innerText = text;
+      scroll.appendChild(userBubble);
+      scroll.scrollTop = scroll.scrollHeight;
+
+      // Smart Bot Reply
+      setTimeout(() => {
+        const answers = SIM_DATA[activeSimNiche].answers;
+        let reply = answers.trial;
+        if (text.toLowerCase().includes('fee') || text.toLowerCase().includes('rate') || text.toLowerCase().includes('paisa') || text.toLowerCase().includes('kitna')) {
+          reply = answers.fee;
+        } else if (text.toLowerCase().includes('discount') || text.toLowerCase().includes('kam') || text.toLowerCase().includes('off')) {
+          reply = answers.discount;
+        }
+
+        const botBubble = document.createElement('div');
+        botBubble.className = 'bubble-b';
+        botBubble.innerText = reply;
+        scroll.appendChild(botBubble);
+        scroll.scrollTop = scroll.scrollHeight;
+      }, 500);
+    }
+
+    // --- ROI CALCULATOR ---
+    function updateRoiCalc() {
+      const calls = parseInt(document.getElementById('callsSlider').value);
+      const deal = parseInt(document.getElementById('dealSlider').value);
+
+      document.getElementById('callCountLabel').innerText = `${calls} Calls`;
+      document.getElementById('dealValLabel').innerText = `₹${deal.toLocaleString('en-IN')}`;
+
+      // 30% conversion lost over 365 days
+      const annualLoss = Math.round(calls * 0.3 * deal * 365);
+      document.getElementById('roiLossAmount').innerText = `₹${annualLoss.toLocaleString('en-IN')}`;
+    }
+
+    // --- MASTER LEAD SUBMIT TO RAHUL'S WHATSAPP ---
+    function handleMasterEnquiry(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('mName').value.trim();
+      const phone = document.getElementById('mPhone').value.trim();
+      const business = document.getElementById('mBusiness').value.trim();
+      const category = document.getElementById('mCategory').value;
+      const city = document.getElementById('mCity').value.trim();
+      const req = document.getElementById('mReq').value;
+      const notes = document.getElementById('mNotes').value.trim();
+
+      const waMsg = encodeURIComponent(
+        `🚨 *NEW CLIENT LEAD - KS INNOVATION WEBSITE* 🚨\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `🏢 *Business:* ${business}\n` +
+        `🎯 *Category:* ${category}\n` +
+        `📱 *WhatsApp:* +91 ${phone}\n` +
+        `📍 *Location:* ${city}\n` +
+        `⚡ *Automation Selected:* ${req}\n` +
+        (notes ? `📝 *Notes:* ${notes}\n` : '') +
+        `\n_Sent from ksinnovation.in Master Portal_`
+      );
+
+      alert(`✓ Thank you ${name}! Aapki inquiry register ho gayi hai.\n\nAb WhatsApp open ho raha hai taaki aap direct Rahul ji ko message send kar sakein!`);
+      window.open(`https://wa.me/918005587002?text=${waMsg}`, '_blank');
+    }
+  </script>
+
+  <!-- Universal KS Innovation Floating AI Widget -->
+  <script src="ks-ai-widget.js"></script>
+
+</body>
+</html>

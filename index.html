@@ -111,7 +111,51 @@
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+  }
+  /* PROFESSIONAL CITY SELECTOR IN NAVBAR */
+  .nav-city-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1.5px solid rgba(0, 240, 255, 0.35);
+    padding: 6px 12px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+    transition: all 0.2s ease;
+  }
+  .nav-city-box:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+  }
+  .nav-city-pin { font-size: 14px; }
+  .nav-city-dropdown {
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 14px;
+  }
+  .nav-city-dropdown option {
+    background: #091226;
+    color: #fff;
+    padding: 8px;
+  }
+  .nav-city-arrow {
+    position: absolute;
+    right: 8px;
+    font-size: 10px;
+    color: var(--cyan);
+    pointer-events: none;
   }
   .btn-nav-call {
     color: #fff;
@@ -158,20 +202,147 @@
     pointer-events: none;
     z-index: 0;
   }
-  .hero-badge-pill {
+  /* HERO PROFESSIONAL CITY SUITE */
+  .hero-city-suite {
+    background: linear-gradient(135deg, rgba(9, 18, 38, 0.95), rgba(15, 23, 42, 0.92));
+    border: 1.5px solid rgba(0, 240, 255, 0.4);
+    border-radius: 20px;
+    padding: 22px 26px;
+    max-width: 880px;
+    margin: 0 auto 34px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(0, 240, 255, 0.15);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(14px);
+  }
+  .city-suite-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .city-pulse-tag {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0, 240, 255, 0.1);
-    border: 1.5px solid rgba(0, 240, 255, 0.35);
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 13px;
+    font-size: 11.5px;
     font-weight: 800;
+    letter-spacing: 0.8px;
     color: var(--cyan);
-    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .city-tag-right {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--gold);
+    background: rgba(240, 185, 11, 0.12);
+    border: 1px solid rgba(240, 185, 11, 0.3);
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .city-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .city-dropdown-wrapper {
     position: relative;
-    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    background: #040814;
+    border: 2px solid var(--cyan);
+    border-radius: 12px;
+    padding: 8px 18px;
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.28);
+    transition: all 0.2s ease;
+  }
+  .city-dropdown-wrapper:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 22px rgba(240, 185, 11, 0.35);
+  }
+  .city-dd-icon { font-size: 18px; margin-right: 8px; }
+  .city-dropdown-main {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    padding-right: 22px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .city-dropdown-main option {
+    background: #091226;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .city-dd-arrow {
+    position: absolute;
+    right: 12px;
+    color: var(--cyan);
+    font-size: 11px;
+    pointer-events: none;
+  }
+  .city-fast-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .city-pill-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #94a3b8;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .city-pill-btn:hover {
+    background: rgba(0, 240, 255, 0.12);
+    color: #ffffff;
+    border-color: var(--cyan);
+  }
+  .city-pill-btn.active {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(240, 185, 11, 0.2));
+    border-color: var(--cyan);
+    color: #ffffff;
+    font-weight: 800;
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.35);
+  }
+  .city-status-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .city-meta-pill {
+    font-size: 12px;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 5px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .city-accent {
+    color: var(--cyan);
+    font-weight: 800;
   }
   .pulse-circle {
     width: 8px;
@@ -679,9 +850,9 @@
 
   <!-- TOP TICKER -->
   <div class="top-ticker">
-    <span class="ticker-badge">🔥 LIVE DEMO AVAILABLE</span>
-    <span>Special Launch: Claim <b>1-Day Free Custom AI Bot Trial</b> for your Business • Zero Advance!</span>
-    <a href="#inquiryMaster" style="color: var(--cyan); font-weight: 800; text-decoration: underline;">Claim Now →</a>
+    <span class="ticker-badge" id="tickerBadge">📍 LIVE IN 5 CITIES</span>
+    <span id="tickerText">Special Launch Offer in <b>Jaipur (HQ) • Delhi • Agra • Gwalior • Dholpur</b>! Claim <b>1-Day Free Custom AI Bot Trial</b> • Zero Advance!</span>
+    <a href="#inquiryMaster" style="color: var(--cyan); font-weight: 800; text-decoration: underline;">Claim Free Trial →</a>
   </div>
 
   <!-- STICKY NAVBAR -->
@@ -703,6 +874,19 @@
     </div>
 
     <div class="nav-actions">
+      <!-- PROFESSIONAL NAVBAR CITY DROPDOWN -->
+      <div class="nav-city-box" title="Select Operating City">
+        <span class="nav-city-pin">📍</span>
+        <select id="navCitySelect" class="nav-city-dropdown" onchange="switchCity(this.value)" aria-label="Operating City">
+          <option value="Jaipur">🏛️ Jaipur (HQ)</option>
+          <option value="Delhi">🏙️ Delhi NCR</option>
+          <option value="Agra">🕌 Agra</option>
+          <option value="Gwalior">🏰 Gwalior</option>
+          <option value="Dholpur">👑 Dholpur</option>
+        </select>
+        <span class="nav-city-arrow">▾</span>
+      </div>
+
       <a href="tel:+918005587002" class="btn-nav-call">📞 +91 8005587002</a>
       <a href="#inquiryMaster" class="btn-nav-cta">Book Free Demo</a>
     </div>
@@ -712,8 +896,43 @@
   <section class="hero-wrapper">
     <div class="hero-glow-blob"></div>
 
-    <div class="hero-badge-pill">
-      <span class="pulse-circle"></span> Bhamashah Techno Hub, Jaipur • 24/7 Voice & WhatsApp AI
+    <!-- PROFESSIONAL HERO CITY SELECTOR SUITE -->
+    <div class="hero-city-suite">
+      <div class="city-suite-header">
+        <span class="city-pulse-tag"><span class="pulse-circle"></span> SELECT YOUR OPERATING CITY FOR INSTANT LOCAL DEPLOYMENT</span>
+        <span class="city-tag-right">⚡ 1-Day Free Setup Guarantee</span>
+      </div>
+
+      <div class="city-controls-row">
+        <!-- Interactive City Dropdown -->
+        <div class="city-dropdown-wrapper">
+          <span class="city-dd-icon">📍</span>
+          <select id="heroCitySelect" class="city-dropdown-main" onchange="switchCity(this.value)" aria-label="Select City">
+            <option value="Jaipur">🏛️ Jaipur (HQ • Bhamashah Techno Hub, Malviya Nagar)</option>
+            <option value="Delhi">🏙️ Delhi NCR (Connaught Place, Gurugram & Noida)</option>
+            <option value="Agra">🕌 Agra (Taj Commercial Hub & Sanjay Place)</option>
+            <option value="Gwalior">🏰 Gwalior (City Center & Lashkar Trade Zone)</option>
+            <option value="Dholpur">👑 Dholpur (Chambal Regional Commercial Corridor)</option>
+          </select>
+          <span class="city-dd-arrow">▼</span>
+        </div>
+
+        <!-- 1-Click Quick City Switcher Pills -->
+        <div class="city-fast-pills">
+          <button type="button" class="city-pill-btn active" data-city="Jaipur" onclick="switchCity('Jaipur')">🏛️ Jaipur (HQ)</button>
+          <button type="button" class="city-pill-btn" data-city="Delhi" onclick="switchCity('Delhi')">🏙️ Delhi NCR</button>
+          <button type="button" class="city-pill-btn" data-city="Agra" onclick="switchCity('Agra')">🕌 Agra</button>
+          <button type="button" class="city-pill-btn" data-city="Gwalior" onclick="switchCity('Gwalior')">🏰 Gwalior</button>
+          <button type="button" class="city-pill-btn" data-city="Dholpur" onclick="switchCity('Dholpur')">👑 Dholpur</button>
+        </div>
+      </div>
+
+      <!-- Real-Time Local City Dispatch Status -->
+      <div class="city-status-footer">
+        <div class="city-meta-pill" id="cityStatusPill">⚡ <b>Status:</b> Local Engineering Team Active in <span class="city-accent">Jaipur</span></div>
+        <div class="city-meta-pill" id="cityHubPill">📍 <b>Local Hub:</b> Bhamashah Techno Hub, 2nd Floor, Malviya Nagar, Jaipur</div>
+        <div class="city-meta-pill">📞 <b>Direct Support:</b> +91 8005587002</div>
+      </div>
     </div>
 
     <h1 class="hero-main-title">
@@ -737,10 +956,10 @@
 
   <!-- TRUST STRIP -->
   <div class="trust-strip">
-    <div class="trust-item">📍 Incubated at <b>Bhamashah Techno Hub, Jaipur</b></div>
+    <div class="trust-item" id="trustStripCity">📍 Operating Hub: <b id="trustCityName">Jaipur (HQ)</b> + Delhi, Agra, Gwalior, Dholpur</div>
     <div class="trust-item">⚡ <b>2-Second</b> Response Time Guarantee</div>
     <div class="trust-item">💰 Save <b>₹1,50,000+ Yearly</b> in Receptionist Salary</div>
-    <div class="trust-item">🛡️ <b>DPDP Act 2023</b> & Meta Cloud API Compliant</div>
+    <div class="trust-item">🛡️ Incubated at <b>Bhamashah Techno Hub, Jaipur</b></div>
   </div>
 
   <!-- SECTION 1: 4 CORE SUPERPOWERS -->
@@ -825,12 +1044,22 @@
 
       <!-- Live Phone Frame -->
       <div class="phone-mock">
-        <div class="phone-top-bar">
-          <div class="phone-avatar" id="simAvatar">🏋️</div>
-          <div>
-            <div style="font-size: 13.5px; font-weight: 700; color: #fff;" id="simTitle">IronFit Gym Assistant</div>
-            <div style="font-size: 10.5px; color: #00ff88;">● online • 0-sec AI reply</div>
+        <div class="phone-top-bar" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="phone-avatar" id="simAvatar">🏋️</div>
+            <div>
+              <div style="font-size: 13.5px; font-weight: 700; color: #fff;" id="simTitle">IronFit Gym Assistant</div>
+              <div style="font-size: 10.5px; color: #00ff88;">● online • 0-sec AI reply</div>
+            </div>
           </div>
+          <button id="simVoiceToggle" onclick="toggleSimVoice()" style="background: rgba(0, 240, 255, 0.15); border: 1px solid #00f0ff; color: #00f0ff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 14px; cursor: pointer;">
+            🔊 Voice: ON
+          </button>
+        </div>
+
+        <!-- Quick Indian Query Pills for 1-Click Testing -->
+        <div id="simQuickPills" style="background: #111b21; padding: 8px 12px; display: flex; gap: 6px; overflow-x: auto; white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <!-- Injected dynamically by JS -->
         </div>
 
         <div class="phone-chat-scroll" id="simChatScroll">
@@ -840,7 +1069,8 @@
         </div>
 
         <div class="phone-input-bar">
-          <input type="text" id="simInput" placeholder="Type message in Hindi/English..." onkeydown="if(event.key==='Enter') sendSimMsg()">
+          <input type="text" id="simInput" placeholder="Boliye ya type karein (Hindi/English)..." onkeydown="if(event.key==='Enter') sendSimMsg()">
+          <button id="simMicBtn" onclick="toggleSimMic()" style="background: rgba(255,255,255,0.1); color: #fff; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer;" title="Speak in Hindi into Mic">🎙️</button>
           <button class="phone-send-btn" onclick="sendSimMsg()">➤</button>
         </div>
       </div>
@@ -902,8 +1132,9 @@
         <div>
           <div class="plan-name">WhatsApp Sales Bot</div>
           <div style="font-size: 13px; color: var(--text-muted);">Best for businesses wanting automated chat & trials.</div>
-          <div class="plan-price">₹15,000</div>
-          <div class="plan-retainer">+ ₹3,500/month recurring maintenance</div>
+          <div style="font-size: 12px; color: var(--emerald); font-weight: 800; margin-top: 10px;">⚡ SPECIAL ₹5,000 OFF LAUNCH OFFER</div>
+          <div class="plan-price"><span style="text-decoration: line-through; font-size: 22px; color: #64748b; margin-right: 8px;">₹15,000</span>₹10,000</div>
+          <div class="plan-retainer">+ ₹2,500/month recurring maintenance</div>
 
           <ul class="plan-features">
             <li>✓ Official Meta WhatsApp Cloud API Setup</li>
@@ -918,12 +1149,13 @@
 
       <!-- Plan 2 (Popular) -->
       <div class="pricing-card popular">
-        <div class="popular-badge">MOST POPULAR • 10X ROI</div>
+        <div class="popular-badge">MOST POPULAR • ₹10,000 OFF</div>
         <div>
           <div class="plan-name" style="color: var(--gold);">Complete AI Suite (Voice + WhatsApp)</div>
           <div style="font-size: 13px; color: var(--text-muted);">Never miss a call or chat. 100% replacement for front desk.</div>
-          <div class="plan-price">₹35,000</div>
-          <div class="plan-retainer">+ ₹10,000/month recurring maintenance</div>
+          <div style="font-size: 12px; color: var(--gold); font-weight: 800; margin-top: 10px;">🔥 SPECIAL ₹10,000 OFF LAUNCH OFFER</div>
+          <div class="plan-price"><span style="text-decoration: line-through; font-size: 22px; color: #64748b; margin-right: 8px;">₹35,000</span>₹25,000</div>
+          <div class="plan-retainer">+ ₹8,000/month recurring maintenance</div>
 
           <ul class="plan-features">
             <li>✓ <b>Everything in WhatsApp Closer</b></li>
@@ -941,7 +1173,8 @@
         <div>
           <div class="plan-name">Enterprise Custom AI</div>
           <div style="font-size: 13px; color: var(--text-muted);">For multi-branch hotels, bus operators & B2B brands.</div>
-          <div class="plan-price">₹60,000+</div>
+          <div style="font-size: 12px; color: var(--cyan); font-weight: 800; margin-top: 10px;">🏢 MULTI-BRANCH ENTERPRISE</div>
+          <div class="plan-price">₹50,000</div>
           <div class="plan-retainer">+ Custom Retainer based on volume</div>
 
           <ul class="plan-features">
@@ -1014,14 +1247,22 @@
           <div class="form-row">
             <div>
               <label class="form-label">City / Location *</label>
-              <input type="text" id="mCity" class="form-ctrl" placeholder="e.g. Jaipur, Rajasthan" required>
+              <select id="mCity" class="form-ctrl city-form-dropdown" onchange="switchCity(this.value)" required>
+                <option value="Jaipur" selected>🏛️ Jaipur (Headquarters • Bhamashah Techno Hub)</option>
+                <option value="Delhi">🏙️ Delhi NCR (Connaught Place, Gurugram & Noida)</option>
+                <option value="Agra">🕌 Agra (Taj Commercial Hub & Sanjay Place)</option>
+                <option value="Gwalior">🏰 Gwalior (City Center & Lashkar Trade Zone)</option>
+                <option value="Dholpur">👑 Dholpur (Chambal Regional Commercial Corridor)</option>
+                <option value="Other City">🌐 Other City (Remote Pan-India Setup)</option>
+              </select>
             </div>
             <div>
               <label class="form-label">Automation Needed *</label>
               <select id="mReq" class="form-ctrl" required>
-                <option value="Complete Suite (Voice + WhatsApp)">⚡ Complete Suite (Both)</option>
+                <option value="Complete Suite (Voice + WhatsApp - ₹25k Offer)">⚡ Complete Suite (Voice + WhatsApp - ₹25,000)</option>
+                <option value="WhatsApp Sales Bot (₹10k Offer)">💬 WhatsApp Bot Only (₹10,000)</option>
                 <option value="24/7 AI Voice Calling Only">📞 AI Voice Calling Only</option>
-                <option value="WhatsApp Sales Bot Only">💬 WhatsApp Bot Only</option>
+                <option value="Enterprise Custom AI (₹50k)">🏢 Enterprise Custom AI (₹50,000)</option>
               </select>
             </div>
           </div>
@@ -1077,46 +1318,140 @@
   </footer>
 
   <script>
-    // --- LIVE SIMULATOR NICHE SWITCHER ---
-    const SIM_DATA = {
+    // --- REAL INDIAN MARKET CONSUMER ENGINE ---
+    let simVoiceEnabled = true;
+    let simRecognizer = null;
+    let isSimListening = false;
+
+    const INDIAN_MARKET_INTELLIGENCE = {
       gym: {
         avatar: "🏋️",
-        title: "IronFit Gym Assistant",
-        greeting: "Namaste! 🙏 IronFit Gym me aapka swagat hai. Aaj 1-Day Free Trial pass book karna hai ya fee plans dekhne hain?",
-        answers: {
-          fee: "Sir 1 Month ₹2,000 hai, par 3 Months combo sirf ₹5,000 me hai with 1 Free Diet Chart!",
-          discount: "Sir single month me rate fixed hai, par shaam ko aao, registration charge zero karwa denge!",
-          trial: "Done sir! Aapka 1-Day VIP Pass reserve ho gaya hai. Aaj shaam 6:00 PM City Center 2nd floor aa jaiye!"
+        title: "IronFit Gym Assistant (Priya)",
+        greeting: "Namaste! 🙏 IronFit Gym me Priya bol rahi hoon. Aaj aapko 1-Day Free Trial pass book karna hai ya fee package dekhna hai?",
+        quickPills: [
+          "💸 Discount milega kya?",
+          "🕒 Ladies batch & timing?",
+          "🎟️ 1-Day Free Trial book karo",
+          "📍 Location & parking hai?",
+          "🥗 Trainer & Diet chart?"
+        ],
+        respond: function(text) {
+          const t = text.toLowerCase();
+          // 1. Bargaining / Discount Defense (Indian Psychology)
+          if (t.includes('discount') || t.includes('kam') || t.includes('off') || t.includes('mehenga') || t.includes('sasta')) {
+            return "Sir single month me rate fixed hai, par 3-month combo lenge toh flat ₹1,000 instant off aur free shaker milega! Aaj shaam ko aao, registration charge zero karwa dungi.";
+          }
+          // 2. Ladies Batch & Women Safety
+          if (t.includes('lady') || t.includes('ladies') || t.includes('female') || t.includes('girl') || t.includes('women') || t.includes('safety')) {
+            return "Bilkul ma'am! Subah 10 se 12 aur shaam 4 se 6 exclusive ladies batch rehta hai, female certified trainer floor par hoti hain aur full CCTV security hai.";
+          }
+          // 3. Timings & Crowd
+          if (t.includes('time') || t.includes('timing') || t.includes('kab') || t.includes('open') || t.includes('close') || t.includes('khulta')) {
+            return "Gym subah 6:00 AM se raat 10:00 PM tak open rehti hai. Morning 6-8 and evening 6-8 rush time hota hai, baki hours me bilkul shaant workout kar sakte hain.";
+          }
+          // 4. 1-Day Trial Pass & Booking
+          if (t.includes('trial') || t.includes('pass') || t.includes('demo') || t.includes('aana') || t.includes('book') || t.includes('aaj')) {
+            return "Done sir! 🎟️ Aapka 1-Day VIP Pass activate kar diya hai. Aaj shaam 6:00 PM aakar Priya se mil lijiyega, free me machines test kijiye!";
+          }
+          // 5. Trainer & Diet Consultation
+          if (t.includes('trainer') || t.includes('diet') || t.includes('coach') || t.includes('pt') || t.includes('weight')) {
+            return "Certified general trainer floor par har waqt help ke liye rehte hain sir. Saath me membership ke saath 1 personalized diet chart bilkul free milta hai!";
+          }
+          // 6. Location, Address & Parking
+          if (t.includes('address') || t.includes('location') || t.includes('kahan') || t.includes('parking') || t.includes('mall')) {
+            return "Hamari gym 2nd Floor, City Center Mall, Main Road par hai. 2-wheeler aur 4-wheeler ke liye basement me reserved free parking hai!";
+          }
+          // 7. General Friendly / Pricing
+          if (t.includes('fee') || t.includes('fees') || t.includes('rate') || t.includes('paisa') || t.includes('kitna') || t.includes('charge')) {
+            return "Sir 1 Month ₹2,000 hai, par 3 Months package sirf ₹5,000 ka hai (saving ₹1,000). Aap aaj aakar 1-day workout karke dekhein!";
+          }
+          if (t.includes('hi') || t.includes('hello') || t.includes('namaste') || t.includes('bhai') || t.includes('kaise')) {
+            return "Namaste ji! 🙏 Main ekdum badhiya hoon. Bataiye fitness goal kya hai aapka — weight loss, muscle gain ya regular workout?";
+          }
+          return "Bilkul sir! Main aapke number par complete gym fee packages aur timing chart WhatsApp pe bhej rahi hoon. Aapka shaam ka free trial slot reserve kar doon?";
         }
       },
       hotel: {
         avatar: "🏨",
-        title: "Grand Heritage Resort",
-        greeting: "Namaste! 🙏 Grand Heritage Resort me aapka swagat hai. Room booking ya pool party ke baare me janna hai?",
-        answers: {
-          fee: "Deluxe Pool-facing room ₹3,500/night hai with complimentary buffet breakfast included sir!",
-          discount: "Sir direct WhatsApp booking pe hum free late check-out aur 15% dining discount de rahe hain!",
-          trial: "Main resort ka HD photo catalog aur direct booking link abhi aapko bhej raha hoon!"
+        title: "Grand Heritage Resort (Aman)",
+        greeting: "Namaste! 🙏 Grand Heritage Resort me aapka swagat hai, Aman baat kar raha hoon. Room reservation ya pool party ke baare me janna hai?",
+        quickPills: [
+          "🏨 Deluxe room rate & photo?",
+          "🕒 Check-in & check-out time?",
+          "🏊 Swimming pool free hai?",
+          "👫 Couple friendly & ID proof?",
+          "🍽️ Breakfast included hai?"
+        ],
+        respond: function(text) {
+          const t = text.toLowerCase();
+          if (t.includes('rate') || t.includes('fee') || t.includes('price') || t.includes('paisa') || t.includes('kitna') || t.includes('photo')) {
+            return "Sir Deluxe pool-facing room ₹3,500/night hai with complimentary buffet breakfast! HD room photos aur video catalog aapke WhatsApp par abhi bhej raha hoon.";
+          }
+          if (t.includes('couple') || t.includes('safe') || t.includes('id') || t.includes('unmarried') || t.includes('police')) {
+            return "Yes sir, 100% safe and couple-friendly! Sirf dono guests ke paas valid govt photo ID (Aadhar/Voter ID) honi chahiye. Local IDs bhi welcome hain.";
+          }
+          if (t.includes('check') || t.includes('time') || t.includes('timing') || t.includes('early')) {
+            return "Check-in time dopahar 12:00 PM aur check-out subah 11:00 AM hai. Agar subah jaldi room chahiye toh hum complimentary early check-in arrange kar denge!";
+          }
+          if (t.includes('pool') || t.includes('swim') || t.includes('party')) {
+            return "Haanji! Humara rooftop infinity pool sabhi room guests ke liye bilkul free hai subah 7 AM se shaam 8 PM tak.";
+          }
+          if (t.includes('food') || t.includes('breakfast') || t.includes('dinner') || t.includes('khana')) {
+            return "Buffet breakfast room tariff me included hai sir. Hamare multicuisine restaurant me pure veg aur non-veg dono options available hain.";
+          }
+          return "Ji sir! Main aapko resort ka direct booking link WhatsApp par share kar raha hoon jahan extra 10% discount milega. Aaj ka room hold kar doon?";
         }
       },
       bus: {
         avatar: "🚌",
         title: "Royal Travels Booking Desk",
-        greeting: "Haanji Royal Travels! 🚌 Kahan ka ticket book karna hai aapko?",
-        answers: {
-          fee: "Delhi se Jaipur AC Multi-Axle Sleeper seat ka fare sirf ₹850 hai sir.",
-          discount: "Agar aap return ticket saath book karte hain toh flat ₹100 instant off milega!",
-          trial: "Aaj raat 10:30 PM Dhaula Kuan pickup hai. Seat hold karne ke liye WhatsApp pe CONFIRM karein!"
+        greeting: "Haanji Royal Travels! 🚌 Rajesh bol raha hoon, kahan ka ticket book karna hai aapko?",
+        quickPills: [
+          "🕒 Delhi to Jaipur bus time?",
+          "💺 Sleeper seat ka fare?",
+          "📍 Pickup point kahan hai?",
+          "📡 Live GPS tracking milegi?",
+          "🎟️ Ticket confirm kar do"
+        ],
+        respond: function(text) {
+          const t = text.toLowerCase();
+          if (t.includes('time') || t.includes('timing') || t.includes('kab') || t.includes('jaipur') || t.includes('delhi')) {
+            return "Sir aaj raat 9:30 PM aur 10:30 PM do AC Multi-Axle Sleeper buses nikal rahi hain. Live GPS tracking link direct aapke WhatsApp pe aayega.";
+          }
+          if (t.includes('fare') || t.includes('rate') || t.includes('ticket') || t.includes('kitna') || t.includes('sleeper')) {
+            return "Lower single sleeper ₹850 hai aur upper sleeper ₹750 hai. Return ticket saath book karne par flat ₹100 instant off milega!";
+          }
+          if (t.includes('pickup') || t.includes('kahan') || t.includes('location') || t.includes('stand')) {
+            return "Delhi pickup Dhaula Kuan metro station gate number 2 ke paas hai sir. Bus aane ke 30 minute pehle driver ka direct call aayega.";
+          }
+          if (t.includes('ac') || t.includes('charging') || t.includes('blanket') || t.includes('chadar')) {
+            return "Har sleeper seat me mobile charging point, clean sanitized blanket aur 1 water bottle complimentary milti hai sir.";
+          }
+          return "Done sir! Seat hold karne ke liye abhi WhatsApp pe link bhej raha hoon, ₹200 token pay karke apni sleeper seat confirm kar lijiye!";
         }
       },
       b2b: {
         avatar: "💼",
-        title: "KS Tech B2B Solutions",
+        title: "KS Tech Corporate Sales (Kavita)",
         greeting: "Good day! KS Tech Solutions se Kavita baat kar rahi hoon. Kya meri baat Managing Director sir se ho rahi hai?",
-        answers: {
-          fee: "Sir minimum order quantity 500 units hai, custom specs ke hisaab se quotation share kar dungi.",
-          discount: "Bulk volume orders pe direct tier-3 pricing apply hoti hai sir.",
-          trial: "Kal dopahar 3 baje humare Technical Director ke saath ek 15-minute ka Google Meet demo schedule kar doon?"
+        quickPills: [
+          "📦 Minimum Order (MOQ) kya hai?",
+          "📑 Product catalog & GST bill?",
+          "🚚 Delivery time across India?",
+          "🤝 Director se meeting schedule karo"
+        ],
+        respond: function(text) {
+          const t = text.toLowerCase();
+          if (t.includes('moq') || t.includes('order') || t.includes('minimum') || t.includes('quantity')) {
+            return "Sir wholesale custom manufacturing me minimum order quantity 500 units hai. Volume ke hisaab se tier-3 discounted pricing milti hai.";
+          }
+          if (t.includes('gst') || t.includes('catalog') || t.includes('spec') || t.includes('pdf')) {
+            return "100% GST input tax credit invoice provide kiya jata hai sir. Technical specifications aur CAD drawing abhi email par bhej rahi hoon.";
+          }
+          if (t.includes('meeting') || t.includes('demo') || t.includes('talk') || t.includes('director')) {
+            return "Kal dopahar 3:00 PM hamare Technical Director ke saath ek 15-minute Google Meet video demo schedule kar doon sir?";
+          }
+          return "Thank you for connecting sir! Hamare sales engineer agle 10 minute me aapko complete wholesale quotation ke saath call karenge.";
         }
       }
     };
@@ -1128,12 +1463,111 @@
       document.querySelectorAll('.n-chip').forEach(c => c.classList.remove('active'));
       event.currentTarget.classList.add('active');
 
-      const data = SIM_DATA[nicheKey];
+      const data = INDIAN_MARKET_INTELLIGENCE[nicheKey];
       document.getElementById('simAvatar').innerText = data.avatar;
       document.getElementById('simTitle').innerText = data.title;
       document.getElementById('simChatScroll').innerHTML = `
         <div class="bubble-b">${data.greeting}</div>
       `;
+
+      renderSimQuickPills();
+
+      if (simVoiceEnabled) {
+        speakSimVoice(data.greeting);
+      }
+    }
+
+    function renderSimQuickPills() {
+      const container = document.getElementById('simQuickPills');
+      container.innerHTML = '';
+      const list = INDIAN_MARKET_INTELLIGENCE[activeSimNiche].quickPills;
+      list.forEach(pillText => {
+        const p = document.createElement('div');
+        p.style.cssText = 'font-size: 11px; background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.25); color: #e0f2fe; padding: 4px 10px; border-radius: 12px; cursor: pointer; flex-shrink: 0;';
+        p.innerText = pillText;
+        p.onclick = () => {
+          document.getElementById('simInput').value = pillText.replace(/^[^\w\s]+/, '').trim();
+          sendSimMsg();
+        };
+        container.appendChild(p);
+      });
+    }
+    renderSimQuickPills();
+
+    // --- VOICE SPEECH SYNTHESIS ENGINE ---
+    function toggleSimVoice() {
+      simVoiceEnabled = !simVoiceEnabled;
+      const btn = document.getElementById('simVoiceToggle');
+      if (simVoiceEnabled) {
+        btn.innerText = '🔊 Voice: ON';
+        btn.style.color = '#00f0ff';
+        btn.style.borderColor = '#00f0ff';
+      } else {
+        btn.innerText = '🔇 Voice: OFF';
+        btn.style.color = '#94a3b8';
+        btn.style.borderColor = '#334155';
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      }
+    }
+
+    function speakSimVoice(text) {
+      if (!simVoiceEnabled || !('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+
+      const u = new SpeechSynthesisUtterance(text);
+      const voices = window.speechSynthesis.getVoices();
+      const hindiVoice = voices.find(v => v.lang === 'hi-IN' && (v.name.includes('Swara') || v.name.includes('Madhur') || v.name.includes('Natural')))
+        || voices.find(v => v.lang.startsWith('hi'))
+        || voices.find(v => v.lang === 'en-IN')
+        || null;
+
+      if (hindiVoice) u.voice = hindiVoice;
+      u.lang = 'hi-IN';
+      u.rate = 1.0;
+      u.pitch = activeSimNiche === 'gym' || activeSimNiche === 'b2b' ? 1.05 : 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    // --- SPEECH RECOGNITION (MIC INPUT) ---
+    function toggleSimMic() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("Speech Recognition is supported in Chrome/Edge browsers!");
+        return;
+      }
+
+      if (isSimListening) {
+        if (simRecognizer) simRecognizer.stop();
+        isSimListening = false;
+        document.getElementById('simMicBtn').style.background = 'rgba(255,255,255,0.1)';
+        return;
+      }
+
+      simRecognizer = new SpeechRecognition();
+      simRecognizer.lang = 'hi-IN';
+      simRecognizer.interimResults = false;
+
+      simRecognizer.onstart = () => {
+        isSimListening = true;
+        document.getElementById('simMicBtn').style.background = '#ef4444';
+        document.getElementById('simInput').placeholder = '🎙️ Listening in Hindi... Boliye!';
+      };
+
+      simRecognizer.onresult = (event) => {
+        const transcript = event.results[event.results.length - 1][0].transcript;
+        document.getElementById('simInput').value = transcript;
+        sendSimMsg();
+      };
+
+      simRecognizer.onend = () => {
+        isSimListening = false;
+        document.getElementById('simMicBtn').style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById('simInput').placeholder = 'Boliye ya type karein (Hindi/English)...';
+      };
+
+      try {
+        simRecognizer.start();
+      } catch(e) {}
     }
 
     function sendSimMsg() {
@@ -1149,22 +1583,19 @@
       scroll.appendChild(userBubble);
       scroll.scrollTop = scroll.scrollHeight;
 
-      // Smart Bot Reply
+      // Smart Bot Reply with Indian Psychology
       setTimeout(() => {
-        const answers = SIM_DATA[activeSimNiche].answers;
-        let reply = answers.trial;
-        if (text.toLowerCase().includes('fee') || text.toLowerCase().includes('rate') || text.toLowerCase().includes('paisa') || text.toLowerCase().includes('kitna')) {
-          reply = answers.fee;
-        } else if (text.toLowerCase().includes('discount') || text.toLowerCase().includes('kam') || text.toLowerCase().includes('off')) {
-          reply = answers.discount;
-        }
-
+        const reply = INDIAN_MARKET_INTELLIGENCE[activeSimNiche].respond(text);
         const botBubble = document.createElement('div');
         botBubble.className = 'bubble-b';
         botBubble.innerText = reply;
         scroll.appendChild(botBubble);
         scroll.scrollTop = scroll.scrollHeight;
-      }, 500);
+
+        if (simVoiceEnabled) {
+          speakSimVoice(reply);
+        }
+      }, 400);
     }
 
     // --- ROI CALCULATOR ---
@@ -1180,6 +1611,99 @@
       document.getElementById('roiLossAmount').innerText = `₹${annualLoss.toLocaleString('en-IN')}`;
     }
 
+    // --- PROFESSIONAL CITY DISPATCH SUITE ---
+    const CITY_HUB_DATA = {
+      "Jaipur": {
+        fullName: "Jaipur (HQ)",
+        hub: "Bhamashah Techno Hub, 2nd Floor, Malviya Nagar, Jaipur",
+        status: "Local Engineering Team Active • Same-Day Deployment",
+        offer: "1-Day Free On-Site & Remote Custom AI Bot Setup in Jaipur"
+      },
+      "Delhi": {
+        fullName: "Delhi NCR",
+        hub: "Connaught Place, South Delhi & Gurugram Cyber Corridor",
+        status: "Delhi NCR Team Active • 24/7 Dedicated Client Manager",
+        offer: "Express AI Setup for Clinics, Real Estate & Travel Agencies"
+      },
+      "Agra": {
+        fullName: "Agra",
+        hub: "Sanjay Place Commercial Hub & Fatehabad Rd Tourism Corridor",
+        status: "Agra Deployment Active • Direct WhatsApp Support",
+        offer: "Special Hotel & Multi-Specialty Clinic AI Receptionist"
+      },
+      "Gwalior": {
+        fullName: "Gwalior",
+        hub: "City Center Commercial Complex & Lashkar Trade Hub",
+        status: "Gwalior Regional Hub Live • Zero Advance Trial",
+        offer: "Tailored AI Calling for Coaches, Bus Transport & Wholesale"
+      },
+      "Dholpur": {
+        fullName: "Dholpur",
+        hub: "GT Road Commercial Corridor & Regional Trade Zone",
+        status: "Dholpur Regional Support Active • Direct Founder Desk",
+        offer: "Affordable SME Automation with Free 1-Day Trial"
+      }
+    };
+
+    function switchCity(cityKey) {
+      if (!cityKey) return;
+      let key = "Jaipur";
+      if (cityKey.includes("Delhi")) key = "Delhi";
+      else if (cityKey.includes("Agra")) key = "Agra";
+      else if (cityKey.includes("Gwalior")) key = "Gwalior";
+      else if (cityKey.includes("Dholpur")) key = "Dholpur";
+      else if (cityKey.includes("Jaipur")) key = "Jaipur";
+
+      const data = CITY_HUB_DATA[key] || CITY_HUB_DATA["Jaipur"];
+
+      // Sync All Dropdowns
+      const navSel = document.getElementById('navCitySelect');
+      if (navSel) navSel.value = key;
+
+      const heroSel = document.getElementById('heroCitySelect');
+      if (heroSel) heroSel.value = key;
+
+      const formSel = document.getElementById('mCity');
+      if (formSel) {
+        for (let i = 0; i < formSel.options.length; i++) {
+          if (formSel.options[i].value.includes(key)) {
+            formSel.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Sync Quick City Pills
+      document.querySelectorAll('.city-pill-btn').forEach(btn => {
+        if (btn.getAttribute('data-city') === key) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update Dynamic Status Text
+      const statusPill = document.getElementById('cityStatusPill');
+      if (statusPill) {
+        statusPill.innerHTML = `⚡ <b>Status:</b> ${data.status} in <span class="city-accent">${data.fullName}</span>`;
+      }
+
+      const hubPill = document.getElementById('cityHubPill');
+      if (hubPill) {
+        hubPill.innerHTML = `📍 <b>Local Hub:</b> ${data.hub}`;
+      }
+
+      const trustCity = document.getElementById('trustCityName');
+      if (trustCity) {
+        trustCity.innerText = `${data.fullName}`;
+      }
+
+      const tickerText = document.getElementById('tickerText');
+      if (tickerText) {
+        tickerText.innerHTML = `Special Launch in <b>${data.fullName}</b>! Claim <b>1-Day Free Custom AI Bot Trial</b> • Zero Advance!`;
+      }
+    }
+
     // --- MASTER LEAD SUBMIT TO RAHUL'S WHATSAPP ---
     function handleMasterEnquiry(e) {
       e.preventDefault();
@@ -1188,12 +1712,12 @@
       const phone = document.getElementById('mPhone').value.trim();
       const business = document.getElementById('mBusiness').value.trim();
       const category = document.getElementById('mCategory').value;
-      const city = document.getElementById('mCity').value.trim();
+      const city = document.getElementById('mCity').value;
       const req = document.getElementById('mReq').value;
       const notes = document.getElementById('mNotes').value.trim();
 
       const waMsg = encodeURIComponent(
-        `🚨 *NEW CLIENT LEAD - KS INNOVATION WEBSITE* 🚨\n\n` +
+        `🚨 *NEW CLIENT LEAD - KS INNOVATION* 🚨\n\n` +
         `👤 *Name:* ${name}\n` +
         `🏢 *Business:* ${business}\n` +
         `🎯 *Category:* ${category}\n` +
@@ -1201,7 +1725,7 @@
         `📍 *Location:* ${city}\n` +
         `⚡ *Automation Selected:* ${req}\n` +
         (notes ? `📝 *Notes:* ${notes}\n` : '') +
-        `\n_Sent from ksinnovation.in Master Portal_`
+        `\n_Sent via KS Innovation Official Live Portal_`
       );
 
       alert(`✓ Thank you ${name}! Aapki inquiry register ho gayi hai.\n\nAb WhatsApp open ho raha hai taaki aap direct Rahul ji ko message send kar sakein!`);
